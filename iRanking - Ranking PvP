@@ -1,0 +1,59 @@
+# ------------------------------------------ #
+#		    INFORMACJE OD AUTORA:			 #
+# Skrypt RANKING napisany przez MasterPepcia #
+# Usuniecie stanowi zlamanie praw autorskich #
+# Zakaz udostepniana skyptu bez zgody autora #
+# Oraz usuwania modyfikowania /ranking autor #  
+# ------------------------------------------ #
+#           Ranking Wersja 0.8           	 #
+# ------------------------------------------ #
+# Subnij mój kanal YouTube.com/MasterPepcio  #
+# ------------------------------------------ #
+Options:
+	MaxZabicie: 100
+	MinZabicie: 10
+	MinZgon: -50
+	MaxZgon: -10
+Variables:
+	{punkty.%player%} = 0
+	{zabojstwa.%player%} = 0
+	{smierci.%player%) = 0
+on death:
+	attacker is player
+	add 1 to {zabojstwa.%attacker%}
+	set {PunktyGracza} to random integer between {@MinZabicie} and {@MaxZabicie}
+	add {PunktyGracza} to {punkty.%attacker%}
+	broadcast "&3Gracz &6%victim% &3zostal zabity przez &6%attacker% &a[+%{PunktyGracza}%]"
+on death of player:
+	add 1 to {smierci.%victim%}
+	set {PunktyGracza} to random integer between {@MinZgon} and {@MaxZgon}
+	add {PunktyGracza} to {punkty.%victim%}
+	send "&cDrogi Graczu, polegles w tej walce &a[%{PunktyGracza}%]" to victim
+command /ranking [<player=%player%>]:
+	usage: &aPoprawne uzycie tej komenty to /ranking [NICK]
+	trigger:
+  	send "&3Ranking gracza: %argument 1%"
+		send "&6Punkty --> %{punkty.%argument 1%}%"
+		send "&6Zabil: %{zabojstwa.%argument 1%}%"
+		send "&6Umarl: %{smierci.%argument 1%}%"
+		send "&3Skrypt na Ranking by MasterPepcio"
+on rightclick on sign:
+	line 1 of the clicked block is "[Ranking]"
+	set line 1 to "%player%"
+	wait a tick
+	set line 2 to "&1Zabil: &5%{zabojstwa.%player%}%"
+	wait a tick
+	set line 3 to "&1Umarl: &5%{smierci.%player%}%"
+	wait a tick
+	set line 4 to "&1Punkty: &5%{ranking.%player%}%"
+on rightclick on sign:
+	line 1 of the clicked block is "%nick of player%"
+	set line 1 to "%player%"
+	wait a tick
+	set line 2 to "&1Zabil: %{zabojstwa.%player%}%"
+	wait a tick
+	set line 3 to "&1Umarl: %{smierci.%player%}%"
+	wait a tick
+	set line 4 to "&1Punkty: %{ranking.%player%}%"
+on right click with sword on player:
+	send "&3Ranking Gracza %clicked player% &3to &a %{ranking.%clicked player%}%"
