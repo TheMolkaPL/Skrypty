@@ -1,0 +1,22 @@
+# ------------------------------------------ #
+# INFORMACJE OD AUTORA: #
+# Skrypt napisany przez MasterPepcia         #
+# Usuniecie stanowi zlamanie praw autorskich #
+# Zakaz udostepniana skyptu bez zgody autora #
+# ------------------------------------------ #
+# Ranking Wersja 0.1
+# ------------------------------------------ #
+# Subnij mój kanal YouTube.com/MasterPepcio  #
+# ------------------------------------------ #
+on click with 373:16489:
+	message "&cPotion Sily II zostal zablokowany, ze wzgledu na normalne PvP"
+	cancel event
+on click with 373:16425:
+	message "&cPotion Sily II zostal zablokowany, ze wzgledu na normalne PvP"
+	cancel event
+on click with 373:8297:
+	message "&cPotion Sily II zostal zablokowany, ze wzgledu na normalne PvP"
+	cancel event
+on click with 373:8233:
+	message "&cPotion Sily II zostal zablokowany, ze wzgledu na normalne PvP"
+	cancel event
