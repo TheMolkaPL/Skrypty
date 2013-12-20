@@ -30,7 +30,7 @@ on death of player:
 	add {PunktyGracza} to {punkty.%victim%}
 	send "&cDrogi Graczu, polegles w tej walce &a[%{PunktyGracza}%]" to victim
 command /ranking [<player=%player%>]:
-	usage: &aPoprawne uzycie tej komenty to /ranking [NICK]
+	usage: &aPoprawne uzycie tej komendy to /ranking [NICK]
 	trigger:
   	send "&3Ranking gracza: %argument 1%"
 		send "&6Punkty --> %{punkty.%argument 1%}%"
